@@ -1,0 +1,24 @@
+<div class="container" *ngFor="let data of voterData;">
+  <div class="titleBar">
+    <p style="float:left">Voter #{{data.id}}</p>
+    <p *ngIf="voterBool" style="float:right" (click)="voterCntDec()">Remove</p>
+  </div><br><br>
+  <div class="inputsForm">
+      <form (ngSubmit)="">
+        <table style="padding: 2em;">
+          <tr><td>Name:</td><td><input type="text" name="nameForm" id="nameForm"></td></tr>
+          <tr><td>Age:</td><td><input type="text" name="ageForm" id="ageForm"></td></tr>
+          <tr><td>City:</td><td> <input type="text" name="cityForm" id="cityForm"></td></tr>
+          <tr><td>State:</td><td><input type="text" name="StateForm" id="StateForm"></td></tr>
+          <tr><td><input type="submit" name="submit" id="submit" value="Submit"></td><td></td></tr>
+        </table>
+      </form>
+    </div> 
+  <button (click)="voterCntCalc()">Add</button>
+</div>
+<div>
+  <table>
+    <tr><th>Name</th><th>Age</th><th>City</th><th>State</th></tr>
+    <tr *ngFor="let data1 of voterData"><td>{{data1.name}}</td><td>{{data1.age}}</td><td>{{data1.city}}</td><td>{{data1.state}}</td></tr>
+  </table>
+</div>
